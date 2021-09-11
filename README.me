@@ -1,9 +1,5 @@
 # 具有多個 `DataSource` 的 Spring Data JPA
 
-[TOC]
-
-###### tags: `spring`
-
 ---
 
 ## 目標
@@ -132,7 +128,7 @@ public class DatasourceConfiguration {
 
 ### 主要 `DataSource` 的配置
 
-```java=24
+```java
 @Configuration
 @EnableJpaRepositories(
 	basePackages = {"tw.codethefuckup.multijpa.repository.primary"},
@@ -226,7 +222,7 @@ public class PrimaryDatasourceConfiguration {
 
 ### 次要 `DataSource` 的配置
 
-```java=24
+```
 @Configuration
 @EnableJpaRepositories(
 	basePackages = {"tw.codethefuckup.multijpa.repository.secondary"},
@@ -315,7 +311,7 @@ public class SecondaryDatasourceConfiguration {
 
 ### Web MVC 的配置
 
-```java=17
+```java
 @Configuration
 public class WebMvcConfigurerImpl implements WebMvcConfigurer {
 
@@ -341,7 +337,7 @@ public class WebMvcConfigurerImpl implements WebMvcConfigurer {
 
 ### `src/main/java/tw/codethefuckup/multijpa/controller/WelcomeController.java`
 
-```java=21
+```java
 @RestController
 @RequestMapping("/")
 public class WelcomeController {
